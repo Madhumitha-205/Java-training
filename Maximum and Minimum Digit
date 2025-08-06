@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+                 Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        N = Math.abs(N);
+
+        int maxDigit = 0;
+        int minDigit = 9;
+        if (N == 0) {
+            maxDigit = 0;
+            minDigit = 0;
+        }
+        while (N > 0) {
+            int digit = N % 10; 
+            maxDigit = Math.max(maxDigit, digit);
+            minDigit = Math.min(minDigit, digit);
+            N /= 10; 
+        }
+        System.out.println(maxDigit + " " + minDigit);
+    }
+}
